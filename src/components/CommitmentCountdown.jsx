@@ -183,12 +183,19 @@ export default function CommitmentCountdown() {
       </div>
 
       <div style={{ marginTop: u(42) }}>
-        <ChunkyButton w={174}>AKU SIAP IKUTAN!</ChunkyButton>
+        <ChunkyButton
+          as="a"
+          w={174}
+          href={`${import.meta.env.BASE_URL}Kartu_Komitmen_SemingguTanpaTehCelup.png`}
+          download="Kartu_Komitmen_SemingguTanpaTehCelup.png"
+        >
+          AKU SIAP IKUTAN!
+        </ChunkyButton>
       </div>
 
       <p style={{ ...body, width: u(345), marginTop: u(18) }} className="text-center">
         Yuk, ambil komitmenmu sekarang! Klik tombol diatas buat buktikan kamu siap lepas dari teh celup sintetis,
-        dapet kartu progres kustom milikmu, dan tag @ku.seruput di IG Story!
+        dapet kartu progres kustom milikmu, foto dan tag @ku.seruput di IG Story!
       </p>
     </section>
   );
