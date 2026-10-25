@@ -4,7 +4,7 @@ import { Center, Html, OrbitControls } from "@react-three/drei";
 import { Box3, MeshStandardMaterial, Vector3 } from "three";
 import { OBJLoader } from "three-stdlib";
 
-const MODEL_PATH = "/produk.obj";
+const MODEL_PATH = "/produk2.obj";
 const TARGET_SIZE = 2; // model is normalised so its longest side is 2 world units
 const PART_COLORS = ["#d5f554", "#502119"]; // the OBJ ships without its .mtl, so we colour its two materials ourselves
 

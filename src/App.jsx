@@ -7,8 +7,6 @@ import { FRAME_W } from "./lib/frame";
 
 const BG_SLICES = [1, 2, 3, 4].map((n) => `/bg/bg-${n}.webp`);
 
-// Frame is 430 x 4432. Each section's aspect-ratio uses its slice of that height,
-// so foreground blocks stay lined up with the wallpaper when the width shrinks.
 const SECTIONS = [
   { id: "tim", h: 1200 },
   { id: "footer", h: 132 },

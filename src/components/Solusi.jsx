@@ -10,11 +10,10 @@ export default function Solusi() {
       style={{ aspectRatio: `${FRAME_W} / ${SOLUSI_H}`, paddingTop: u(207) }}
       className="flex w-full flex-col items-center"
     >
-      {/* the lime "Solusinya?!" label is baked into the wallpaper */}
       <h2 className="sr-only">Solusinya?!</h2>
 
       <p style={{ width: u(250), fontSize: u(13), lineHeight: u(16.5) }} className="text-center text-white">
-        ini dia jawaban praktisnya! <strong>Se-Teh.</strong> Portable Tea Infuser dari Ku SERUPUT
+        ini dia jawaban praktisnya! <strong>Se-Teh!</strong> Portable Tea Infuser dari Ku SERUPUT
         <br />
         <br />
         dirancang khusus biar kamu tetap bisa nikmatin racikan teh tubruk murni di mana aja tanpa ribet.

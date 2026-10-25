@@ -3,15 +3,13 @@ import stickerSheet from "../assets/figma/something-is-coming-56.png";
 import logoVector from "../assets/figma/logo-vector.svg";
 
 const NAV_LINKS = [
-  { href: "#hero", label: "Beranda" },
-  { href: "#siap-ikutan", label: "Siap Ikutan" },
-  { href: "#solusi", label: "Solusinya" },
-  { href: "#tolong", label: "Bantu Tili" },
+  { href: "#hero", label: "Home" },
+  { href: "#siap-ikutan", label: "Challenge" },
+  { href: "#solusi", label: "Solusi" },
+  { href: "#tolong", label: "Bebas Celup" },
   { href: "#tim", label: "Tim Kami" },
-  { href: "#footer", label: "Kontak" },
 ];
 
-// Green flower sticker, cropped out of the sticker sheet.
 const flowerStyle = {
   backgroundImage: `url(${stickerSheet})`,
   backgroundSize: "429% 561%",
@@ -38,14 +36,19 @@ export default function Header() {
         <header className="px-5 pt-5">
           <div className="grid h-[58px] grid-cols-[auto_1fr_auto] items-center rounded-full bg-[#fef9e4] px-4 drop-shadow-[2px_4px_0_#f39835]">
             <a href="#hero" aria-label="Ku Seruput, ke atas" className="-ml-3 grid size-[56px] place-items-center">
+              {/* Animasi spin ditambahkan di sini */}
               <span
                 aria-hidden
-                className="col-start-1 row-start-1 size-full rotate-[80deg]"
+                className="col-start-1 row-start-1 size-full animate-[spin_10s_linear_infinite]"
                 style={flowerStyle}
               />
               <img src={logoVector} alt="" className="col-start-1 row-start-1 h-[26px] w-[17px]" />
             </a>
-            <span />
+
+            <span className="text-center font-bold text-[#502119] text-xl tracking-wider">
+              KU.SERUPUT
+            </span>
+
             <button
               type="button"
               aria-label="Buka menu"

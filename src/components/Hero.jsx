@@ -18,7 +18,7 @@ export default function Hero() {
         style={{ width: u(350), fontSize: u(12.5), lineHeight: u(15.5) }}
         className="text-center text-[#fef9e4]"
       >
-        Hai! kami, <mark className="bg-[#d5f554] px-1 font-bold text-[#502119]">KU SERUPUT.</mark>{" "}
+        Hai! kami, <mark className="bg-[#d5f554] px-1 font-bold text-[#502119]">KU SERUPUT!</mark>{" "} <br/>
         <mark className="bg-[#ff74c7] px-1 font-bold text-[#502119]">KU SERUPUT</mark> adalah merupakan inisiatif
         gerakan edukasi dari Tim 'Dikebut Dua Hari' (FSRD ITB), Finalis LIDM 2026 Divisi Poster Digital Pendidikan.
       </p>
