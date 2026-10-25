@@ -41,7 +41,9 @@ const C = {
   blob: "rgba(205,85,22,0.22)", leaf: "#7DBB3F", leafDark: "#3E7A22", plastic: "#DDEFF5",
 };
 const BGM_FILE = "bgm.mp3";
+const JUMP_SFX = "jump.wav", BGM_JUMP_FILE = "tili.mp3";
 const asset = (f) => import.meta.env.BASE_URL + f;
+let onJump = () => {};
 
 /* ============================ HELPERS ============================ */
 const rnd = (a, b) => a + Math.random() * (b - a);
@@ -183,6 +185,7 @@ function update(S, dt, inp) {
     if (T.stand && T.stand.dx) T.x += T.stand.dx;
     if (hold && !T.lock) T.charge = Math.min(1, T.charge + dt / CHARGE_TIME);
     if (T.charge > 0 && (!hold || (AUTO_RELEASE && T.charge >= 1))) {
+      onJump();
       T.vy = -lerp(JUMP_MIN, JUMP_MAX, T.charge);
       T.vx = T.dir * H_SPEED * lerp(H_MIN, 1, T.charge);
       T.grounded = false; T.stand = null;
@@ -488,7 +491,10 @@ export default function App() {
     const st = S.current; reset(st); st.phase = "play"; st.tili.lock = true;
     setPaused(false);
     const a = bgm.current;
-    if (a) a.play().catch(() => {});
+    if (a) {
+      if (!a.src.endsWith(BGM_FILE)) a.src = asset(BGM_FILE);
+      a.play().catch(() => {});
+    }
   };
 
   useEffect(() => {
@@ -508,6 +514,14 @@ export default function App() {
     const audio = new Audio(asset(BGM_FILE));
     audio.loop = true; audio.volume = 0.5;
     bgm.current = audio;
+    const jumpSfx = new Audio(asset(JUMP_SFX));
+    onJump = () => {
+      jumpSfx.currentTime = 0; jumpSfx.play().catch(() => {});
+      if (!audio.src.endsWith(BGM_JUMP_FILE)) {
+        audio.src = asset(BGM_JUMP_FILE);
+        audio.play().catch(() => {});
+      }
+    };
 
     pauseFn.current = (v) => {
       if (st.phase !== "play") return;
@@ -560,7 +574,7 @@ export default function App() {
     };
     raf = requestAnimationFrame(frame);
     return () => {
-      cancelAnimationFrame(raf); ro.disconnect(); audio.pause();
+      cancelAnimationFrame(raf); ro.disconnect(); audio.pause(); onJump = () => {};
       window.removeEventListener("keydown", onD); window.removeEventListener("keyup", onU);
       document.removeEventListener("visibilitychange", onVis);
       window.removeEventListener('deviceorientation', handleOrientation);
