@@ -622,12 +622,15 @@ export default function App() {
 
         {phase === "menu" && (
           <div style={ui.fill}>
-            <div style={{ fontSize: 56, fontWeight: 800, lineHeight: 1 }}>Tili</div>
-            <div style={{ fontSize: 17, maxWidth: 280 }}>Miringkan HP kamu ke kiri/kanan untuk mengarahkan Tili, lalu Tahan layar untuk melompat!</div>
-            <div style={{ fontSize: 14, opacity: 0.85, maxWidth: 290, marginTop: 8 }}>
+            <div style={{ fontSize: 56, fontWeight: 800, lineHeight: 1 }}>Bebas Celup</div>
+            <div style={{ fontSize: 20, maxWidth: 500 }}>Bantu Tili Kabur dari Mikroplastik!</div>
+            <div style={{ height: 50}}></div>
+            <div style={{ fontSize: 15, maxWidth: 280 }}>Miringkan HP kamu ke kiri/kanan untuk mengarahkan Tili, lalu Tahan layar untuk melompat!</div>
+            <div style={{ fontSize: 9, opacity: 0.85, maxWidth: 290, marginTop: 8 }}>
               (Di PC: Tahan Panah Kiri/Kanan dan tekan Spasi)
             </div>
-            <button style={{...ui.btn, marginTop: 20}} onClick={start}>Mulai Game (Izinkan Sensor)</button>
+            <button style={{ ...ui.btn, marginTop: 20 }} onClick={start}>Mulai</button>
+            <div style={{ height: 100}}></div>
           </div>
         )}
 
